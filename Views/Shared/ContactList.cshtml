@@ -1,7 +1,26 @@
+@using AddressBookProject.Models;
+
+@{
+  Layout = "_Layout";
+}
+
 <div class="container">
   <div class="jumbotron">
     <h1>Handy-Dandy Address Book </h1>
   </div>
+  <h3>Add a <a href="contacts/new">New Contact</a></h3>
+  <div class="well">
+    <h3>My Contacts:</h3>
+    <ul>
+<!-- Add foreach loop to display all contacts in List
 
-  <h3>Add a <a href="contact/create">New Contact</a></h3>
+foreach (Contact contact in Model)
+{
+  <li><a href="/contacts/INSERTATSYMBOLcontact.Id">INSERTATSYMBOLcontact.GetName</a></li>
+} -->
+    </ul>
+  </div>
+
+<!-- Add foreach loop for favorites w/ star emoji -->
+
 </div>
