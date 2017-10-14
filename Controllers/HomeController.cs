@@ -7,20 +7,20 @@ namespace AddressBookProject.Controllers
 {
     public class HomeController : Controller
     {
-        [HttpGet("/"), ActionName("ContactList")]
+        [HttpGet("/")]
         public ActionResult Index()
         {
             return View(Contact.GetAll());
         }
 
-        [HttpGet("/contacts/new"), ActionName("ContactForm")]
+        [HttpGet("/contacts/form")]
         public ActionResult ContactForm()
         {
           return View();
         }
 
         [HttpPost("/contacts/new")]
-        public ActionResult NewContact()
+        public ActionResult ContactInfo()
         {
           string contactName = Request.Form["new-contact-name"];
           string contactPhone = Request.Form["new-contact-phone"];
@@ -29,7 +29,7 @@ namespace AddressBookProject.Controllers
           return Redirect("/");
         }
 
-        [HttpGet("/contacts/{id}"), ActionName("ContactInfo")]
+        [HttpGet("/contacts/{id}")]
         public ActionResult ContactInfo(int id)
         {
           Contact selectedContact = Contact.Find(id);

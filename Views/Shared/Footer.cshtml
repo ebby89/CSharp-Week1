@@ -1,3 +1,9 @@
 <div id="footer">
+  @{
+    var weekDay = DateTime.Now.DayOfWeek;
+    var greetingMessage = "Today is: " + weekDay + ".";
+  }
+  
+  <h4>@greetingMessage</h4>
   <h4>Website painstakingly created by: Kyle Ebersole</h4>
 </div>
