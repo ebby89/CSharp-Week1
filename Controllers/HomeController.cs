@@ -28,7 +28,6 @@ namespace AddressBookProject.Controllers
           Contact newContact = new Contact(contactName, contactPhone, contactAddress);
           return Redirect("/");
         }
-        // [HttpGet("/contacts")]
 
         [HttpGet("/contacts/{id}"), ActionName("ContactInfo")]
         public ActionResult ContactInfo(int id)
