@@ -19,7 +19,7 @@ namespace AddressBookProject.Controllers
           return View();
         }
 
-        [HttpPost("/contacts/new"), ActionName("ContactInfo")]
+        [HttpPost("/contacts/new"), ActionName("ContactList")]
         public ActionResult NewContact()
         {
           string contactName = Request.Form["new-contact-name"];
@@ -31,11 +31,10 @@ namespace AddressBookProject.Controllers
         // [HttpGet("/contacts")]
 
 
-        [HttpGet("/contacts/{id}")]
+        [HttpPost("/contacts/{id}"), ActionName("ContactInfo")]
         public ActionResult ContactInfo(int id)
         {
           Contact selectedContact = Contact.Find(id);
-          List<Contact> contacts = selectedContact.GetContacts();
           return View(selectedContact);
         }
 
