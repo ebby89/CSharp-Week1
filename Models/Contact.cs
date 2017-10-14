@@ -61,6 +61,5 @@ namespace AddressBookProject.Models
     {
       return _instances[id];
     }
-            //TODO -1 after id?
   }
 }
