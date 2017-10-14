@@ -20,17 +20,19 @@ namespace AddressBookProject.Controllers
         }
 
         [HttpPost("/contacts/new")]
-        public ActionResult ContactInfo()
+        public ActionResult NewContact()
         {
           string contactName = Request.Form["new-contact-name"];
           string contactPhone = Request.Form["new-contact-phone"];
           string contactAddress = Request.Form["new-contact-address"];
           Contact newContact = new Contact(contactName, contactPhone, contactAddress);
-          return Redirect("/");
+          return View(newContact);
         }
 
+
+
         [HttpGet("/contacts/{id}")]
-        public ActionResult ContactInfo(int id)
+        public ActionResult NewContact(int id)
         {
           Contact selectedContact = Contact.Find(id);
           return View(selectedContact);
