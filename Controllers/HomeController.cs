@@ -36,5 +36,12 @@ namespace AddressBookProject.Controllers
           return View(selectedContact);
         }
 
+        [HttpPost("/contacts/list/clear")]
+        public ActionResult ContactListClear()
+        {
+          Contact.ClearAll();
+          return View();
+        }
+
     }
 }

@@ -13,11 +13,15 @@
     <h3>My Contacts:</h3>
     <ul>
 
-@foreach (Contact contact in Model)
-{
-  <li><a href="/contacts/@contact.GetId()">@contact.GetName()</a></li>
-}
+    @foreach (Contact contact in Model)
+    {
+      <li><a href="/contacts/@contact.GetId()">@contact.GetName()</a></li>
+    }
     </ul>
+
+    <form action="/contacts/list/clear" method="post">
+      <button type="submit" name="button">Clear All Contacts</button>
+    </form>
   </div>
 
 <!-- Add foreach loop for favorites w/ star emoji -->

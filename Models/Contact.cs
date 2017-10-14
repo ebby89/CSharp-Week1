@@ -57,6 +57,11 @@ namespace AddressBookProject.Models
       return _instances;
     }
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
     public static Contact Find(int id)
     {
       return _instances[id];
