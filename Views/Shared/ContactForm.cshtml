@@ -1,13 +1,9 @@
-@using AddressBookProject.Models;
-
 @{
   Layout = "_Layout";
 }
 
 <div class="container">
-  <div class="jumbotron">
-    <h3>Create a New Contact:</h3>
-  </div>
+  <h3>Create a New Contact:</h3>
   <form action="/contacts/new" method="post">
     <div class="form-group">
       <label for="new-contact-name">Enter Name: </label>
@@ -21,7 +17,7 @@
 
     <div class="form-group">
       <label for="new-contact-address">Enter Address: </label>
-      <input id="new-contact-address" name="new-contact-address" type="text" class="form-control" placeholder="123 NW ABC Street, City, State, Zip">
+      <input id="new-contact-address" name="new-contact-address" type="text" class="form-control" placeholder="Street, City, State, Zip">
     </div>
 
     <button type="submit" name="submit-button" class="btn btn-md btn-info">Submit Info</button>

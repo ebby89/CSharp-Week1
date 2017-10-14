@@ -1,12 +1,14 @@
-@using AddressBookProject.Models;
+
+
+@{
+  Layout = "_Layout";
+}
 
 <div class="container">
   <h3>You created a new contact!</h3>
   <p>New Contact Details:</p>
   <ul>
-    <li>.GetName</li>
-    <li>.GetPhone</li>
-    <li>.GetAddress</li>
+    <li>@Model._GetName</li>
     <br>
   </ul>
 </div>

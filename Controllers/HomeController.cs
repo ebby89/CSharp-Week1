@@ -13,7 +13,13 @@ namespace AddressBookProject.Controllers
             return View(Contact.GetAll());
         }
 
-        [HttpPost("/contacts/new"), ActionName("ContactForm")]
+        [HttpGet("/contacts/new"), ActionName("ContactForm")]
+        public ActionResult ContactForm()
+        {
+          return View();
+        }
+
+        [HttpPost("/contacts/new"), ActionName("ContactInfo")]
         public ActionResult NewContact()
         {
           string contactName = Request.Form["new-contact-name"];
@@ -22,13 +28,16 @@ namespace AddressBookProject.Controllers
           Contact newContact = new Contact(contactName, contactPhone, contactAddress);
           return View(Contact.GetAll());
         }
+        // [HttpGet("/contacts")]
 
-        // [HttpPost("/contacts/{id}"), ActionName("ContactInfo")]
-        // public ActionResult ContactInfo(int id)
-        // {
-        //   Contact selectedContact = Contact.Find(id);
-        //   return View(selectedPlace);
-        // }
+
+        [HttpGet("/contacts/{id}")]
+        public ActionResult ContactInfo(int id)
+        {
+          Contact selectedContact = Contact.Find(id);
+          List<Contact> contacts = selectedContact.GetContacts();
+          return View(selectedContact);
+        }
 
     }
 }

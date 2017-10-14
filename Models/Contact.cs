@@ -13,11 +13,11 @@ namespace AddressBookProject.Models
 
     public Contact (string name, string phone, string address)
     {
+      _id = _instances.Count;
       _name = name;
       _phone = phone;
       _address = address;
       _instances.Add(this);
-      _id = _instances.Count;
     }
 
     public string GetName()
@@ -61,6 +61,6 @@ namespace AddressBookProject.Models
     {
       return _instances[id];
     }
-            //TODO -1 after id? 
+            //TODO -1 after id?
   }
 }
